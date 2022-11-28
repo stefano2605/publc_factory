@@ -1,0 +1,24 @@
+{
+	"name": "SCHEDULED001",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PIP001",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 4,
+				"startTime": "2022-11-28T15:34:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
