@@ -1,0 +1,23 @@
+{
+	"name": "output",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSAT001",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "out",
+				"folderPath": "output",
+				"container": "adftutorial"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
