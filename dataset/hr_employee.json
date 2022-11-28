@@ -1,0 +1,12 @@
+{
+	"name": "hr_employee",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "orcl12",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": []
+	}
+}
