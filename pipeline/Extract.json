@@ -37,7 +37,11 @@
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
-							"maxRowsPerFile": 1000,
+							"maxRowsPerFile": 10000,
+							"fileNamePrefix": {
+								"value": "@pipeline().DataFactory",
+								"type": "Expression"
+							},
 							"quoteAllText": true,
 							"fileExtension": ".csv"
 						}
