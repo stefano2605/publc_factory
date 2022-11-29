@@ -11,9 +11,25 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSAT001'"
 		},
+		"DestinationContainer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DestinationContainer'"
+		},
 		"orcl12_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'orcl12'"
+		},
+		"sqlserverrwsomu52oprsm_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'sqlserverrwsomu52oprsm'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"PublicDatset_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'PublicDatset'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -45,12 +61,44 @@
 					"AzureBlobStorageSAT001_connectionString": {
 						"value": "[parameters('AzureBlobStorageSAT001_connectionString')]"
 					},
+					"DestinationContainer_connectionString": {
+						"value": "[parameters('DestinationContainer_connectionString')]"
+					},
 					"orcl12_connectionString": {
 						"value": "[parameters('orcl12_connectionString')]"
+					},
+					"sqlserverrwsomu52oprsm_connectionString": {
+						"value": "[parameters('sqlserverrwsomu52oprsm_connectionString')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"PublicDatset_sasUri": {
+						"value": "[parameters('PublicDatset_sasUri')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "fac-sat001_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'fac-sat001_ArmTemplate_0')]"
+			]
 		}
 	]
 }

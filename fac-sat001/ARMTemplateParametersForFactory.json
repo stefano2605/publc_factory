@@ -8,7 +8,19 @@
 		"AzureBlobStorageSAT001_connectionString": {
 			"value": ""
 		},
+		"DestinationContainer_connectionString": {
+			"value": ""
+		},
 		"orcl12_connectionString": {
+			"value": ""
+		},
+		"sqlserverrwsomu52oprsm_connectionString": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"PublicDatset_sasUri": {
 			"value": ""
 		}
 	}
