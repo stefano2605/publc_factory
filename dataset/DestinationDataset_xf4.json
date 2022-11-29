@@ -1,0 +1,24 @@
+{
+	"name": "DestinationDataset_xf4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSAT001",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "book_listing.csv",
+				"folderPath": "output/booklist",
+				"container": "adftutorial"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
