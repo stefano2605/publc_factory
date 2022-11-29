@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSAT001'"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"DestinationContainer_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'DestinationContainer'"
@@ -22,10 +26,6 @@
 		"sqlserverrwsomu52oprsm_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'sqlserverrwsomu52oprsm'"
-		},
-		"AzureDatabricks1_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
 		"PublicDatset_sasUri": {
 			"type": "secureString",
@@ -61,6 +61,9 @@
 					"AzureBlobStorageSAT001_connectionString": {
 						"value": "[parameters('AzureBlobStorageSAT001_connectionString')]"
 					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
 					"DestinationContainer_connectionString": {
 						"value": "[parameters('DestinationContainer_connectionString')]"
 					},
@@ -69,9 +72,6 @@
 					},
 					"sqlserverrwsomu52oprsm_connectionString": {
 						"value": "[parameters('sqlserverrwsomu52oprsm_connectionString')]"
-					},
-					"AzureDatabricks1_accessToken": {
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
 					"PublicDatset_sasUri": {
 						"value": "[parameters('PublicDatset_sasUri')]"
