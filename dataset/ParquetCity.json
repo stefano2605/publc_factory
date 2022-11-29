@@ -1,0 +1,20 @@
+{
+	"name": "ParquetCity",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorageSAT001",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "output",
+				"container": "adftutorial"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
