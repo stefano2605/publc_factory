@@ -1,5 +1,5 @@
 {
-	"name": "CopyPipeline_Databricks",
+	"name": "CPY_DATABRICKS",
 	"properties": {
 		"activities": [
 			{
@@ -59,7 +59,7 @@
 				]
 			},
 			{
-				"name": "CrimeNotebook",
+				"name": "CrimeNB",
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
