@@ -7,6 +7,9 @@
 		},
 		"AzureBlobStorageSAT001_connectionString": {
 			"value": ""
+		},
+		"orcl12_connectionString": {
+			"value": ""
 		}
 	}
 }
