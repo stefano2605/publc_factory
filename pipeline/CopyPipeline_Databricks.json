@@ -80,7 +80,9 @@
 				"typeProperties": {
 					"notebookPath": "/Users/stefano@attardi.eu/03-Data-Ingestion-Via-ADF/includes/Databricks-Data-Transformations",
 					"baseParameters": {
-						"accountName": "stgaccsat001"
+						"accountName": "stgaccsat001",
+						"accountKey": "SoXZy3RLrvXXnMlAhq86JZoba6FUacim/fZYP7WPSlLC/pms6Hu9f/hEML+aoSVHvKeIyn3AVPP9+AStbcOR0g==",
+						"containerName": "databricks"
 					}
 				},
 				"linkedServiceName": {
