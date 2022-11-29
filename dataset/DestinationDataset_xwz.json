@@ -1,0 +1,19 @@
+{
+	"name": "DestinationDataset_xwz",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DestinationContainer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "databricks"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
