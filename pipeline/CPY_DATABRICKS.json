@@ -20,7 +20,7 @@
 					},
 					{
 						"name": "Destination",
-						"value": "databricks//"
+						"value": "dwtemp//"
 					}
 				],
 				"typeProperties": {
