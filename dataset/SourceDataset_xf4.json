@@ -11,8 +11,8 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "book_listing.csv",
-				"folderPath": "input/books",
-				"container": "adftutorial"
+				"folderPath": "data",
+				"container": "dwtemp"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
