@@ -1,0 +1,29 @@
+{
+	"name": "CrimeData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "PublicDatset",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "crime-data-2016",
+				"container": "training"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "Prop_1",
+				"type": "String"
+			}
+		]
+	}
+}
