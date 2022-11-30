@@ -28,8 +28,7 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*",
+							"fileListPath": "training/crime-data-2016",
 							"enablePartitionDiscovery": false
 						}
 					},
