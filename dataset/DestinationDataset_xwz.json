@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "databricks"
+				"folderPath": "crime",
+				"container": "dwtemp"
 			},
 			"compressionCodec": "snappy"
 		},

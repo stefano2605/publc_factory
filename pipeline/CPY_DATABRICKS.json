@@ -78,11 +78,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/stefano@attardi.eu/03-Data-Ingestion-Via-ADF/includes/Databricks-Data-Transformations",
+					"notebookPath": "/Users/stefano.a.attardi@pwc.com/03-Data-Ingestion-Via-ADF/01-Data-Ingestion",
 					"baseParameters": {
-						"accountName": "stgaccsat001",
-						"accountKey": "SoXZy3RLrvXXnMlAhq86JZoba6FUacim/fZYP7WPSlLC/pms6Hu9f/hEML+aoSVHvKeIyn3AVPP9+AStbcOR0g==",
-						"containerName": "databricks"
+						"accountName": "csb10032001c3ccaf6c",
+						"accountKey": "15kPReIkvflZOGbU00DUmYDzLQQ7XP8u0ny0SEuFwQBoQozzfjPbReVxNWTAxuwx1JoEsHVsQt4sWhOnTjiwVg==",
+						"containerName": "dwtemp"
 					}
 				},
 				"linkedServiceName": {
