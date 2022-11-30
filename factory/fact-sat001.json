@@ -1,0 +1,9 @@
+{
+	"name": "fact-sat001",
+	"location": "westeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0e304ea2-a048-4506-954a-d496ae4235f9",
+		"tenantId": "513294a0-3e20-41b2-a970-6d30bf1546fa"
+	}
+}

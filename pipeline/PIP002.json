@@ -1,9 +1,9 @@
 {
-	"name": "PIP001",
+	"name": "PIP002",
 	"properties": {
 		"activities": [
 			{
-				"name": "Custom1",
+				"name": "Custom2",
 				"type": "Custom",
 				"dependsOn": [],
 				"policy": {
@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"command": "cmd /c powershell -ExecutionPolicy ByPass ./math.ps1 -param1 $env:computername -param2 $env:number_of_processors",
+					"command": "cmd /c powershell ./install.ps1",
 					"resourceLinkedService": {
 						"referenceName": "AzureBlobStorageSAT001",
 						"type": "LinkedServiceReference"
@@ -33,7 +33,7 @@
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2022-11-26T17:01:05Z"
+		"lastPublishTime": "2022-11-28T08:24:40Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
