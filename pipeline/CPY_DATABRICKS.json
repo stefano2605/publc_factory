@@ -28,7 +28,8 @@
 						"type": "ParquetSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"fileListPath": "training/crime-data-2016",
+							"recursive": true,
+							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						}
 					},
@@ -46,7 +47,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_xwz",
+						"referenceName": "CrimeData",
 						"type": "DatasetReference"
 					}
 				],
