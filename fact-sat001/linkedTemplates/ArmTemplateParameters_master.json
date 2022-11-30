@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "fact-sat001"
+		},
+		"AzureBatchSAT001_accessKey": {
+			"value": ""
+		},
+		"AzureBlobStorageSAT001_connectionString": {
+			"value": ""
+		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"DestinationContainer_connectionString": {
+			"value": ""
+		},
+		"AzureBatchSAT001_properties_typeProperties_batchUri": {
+			"value": "https://batchsat001.westeurope.batch.azure.com"
+		},
+		"AzureBatchSAT001_properties_typeProperties_poolName": {
+			"value": "poolsat001_considering_quota"
+		},
+		"AzureBatchSAT001_properties_typeProperties_accountName": {
+			"value": "batchsat001"
+		},
+		"PublicDatset_sasUri": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

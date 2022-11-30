@@ -1,0 +1,118 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "fact-sat001"
+		},
+		"AzureBatchSAT001_accessKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessKey' of 'AzureBatchSAT001'"
+		},
+		"AzureBlobStorageSAT001_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorageSAT001'"
+		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"DestinationContainer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'DestinationContainer'"
+		},
+		"AzureBatchSAT001_properties_typeProperties_batchUri": {
+			"type": "string",
+			"defaultValue": "https://batchsat001.westeurope.batch.azure.com"
+		},
+		"AzureBatchSAT001_properties_typeProperties_poolName": {
+			"type": "string",
+			"defaultValue": "poolsat001_considering_quota"
+		},
+		"AzureBatchSAT001_properties_typeProperties_accountName": {
+			"type": "string",
+			"defaultValue": "batchsat001"
+		},
+		"PublicDatset_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'PublicDatset'"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "fact-sat001_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorageSAT001_connectionString": {
+						"value": "[parameters('AzureBlobStorageSAT001_connectionString')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"DestinationContainer_connectionString": {
+						"value": "[parameters('DestinationContainer_connectionString')]"
+					},
+					"AzureBatchSAT001_accessKey": {
+						"value": "[parameters('AzureBatchSAT001_accessKey')]"
+					},
+					"PublicDatset_sasUri": {
+						"value": "[parameters('PublicDatset_sasUri')]"
+					},
+					"AzureBatchSAT001_properties_typeProperties_batchUri": {
+						"value": "[parameters('AzureBatchSAT001_properties_typeProperties_batchUri')]"
+					},
+					"AzureBatchSAT001_properties_typeProperties_poolName": {
+						"value": "[parameters('AzureBatchSAT001_properties_typeProperties_poolName')]"
+					},
+					"AzureBatchSAT001_properties_typeProperties_accountName": {
+						"value": "[parameters('AzureBatchSAT001_properties_typeProperties_accountName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "fact-sat001_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'fact-sat001_ArmTemplate_0')]"
+			]
+		}
+	]
+}
