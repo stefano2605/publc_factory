@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "data/output",
+				"fileName": "book_listing.csv",
+				"folderPath": "data",
 				"container": "dwtemp"
 			},
 			"columnDelimiter": ",",
