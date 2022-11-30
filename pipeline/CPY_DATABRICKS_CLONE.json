@@ -1,0 +1,96 @@
+{
+	"name": "CPY_DATABRICKS_CLONE",
+	"properties": {
+		"activities": [
+			{
+				"name": "CPY003",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "training/crime-data-2016/"
+					},
+					{
+						"name": "Destination",
+						"value": "dwtemp//"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_xwz",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_xwz",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "CrimeNB",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "CPY003",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.06:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/stefano.a.attardi@pwc.com/03-Data-Ingestion-Via-ADF/01-Data-Ingestion",
+					"baseParameters": {
+						"accountName": "csb10032001c3ccaf6c",
+						"accountKey": "15kPReIkvflZOGbU00DUmYDzLQQ7XP8u0ny0SEuFwQBoQozzfjPbReVxNWTAxuwx1JoEsHVsQt4sWhOnTjiwVg==",
+						"containerName": "dwtemp"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}
